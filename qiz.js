@@ -41,15 +41,14 @@ const fact = [
     },
 ];
 
+
 // TODO 3: Establecer el texto del elemento statement en la propiedad correspondiente del objeto fact
+
+
 
 let questions = 0;
 
-
-statementElement.textContent = fact[questions].statement;
-
-    
-
+statementElement.textContent = fact[questions].statement; 
 
 // TODO 4: Declarar funciones disable y enable para establecer o eliminar el atributo "disabled" de un elemento de botón dado
     // disable(button) debe establecer el atributo "disabled" del elemento de botón en el valor ""
@@ -57,6 +56,7 @@ statementElement.textContent = fact[questions].statement;
 function disable(button){
     return button.setAttribute('disabled', '');
 }
+
 function enable(button) {
     return button.removeAttribute('disabled')
 }
@@ -67,6 +67,7 @@ function isCorrect(guess){
     return guess === fact[questions].answer;
 }
 scoreElement.textContent = `Puntuación: ${score}`
+
 // TODO 6A: Usar un bucle for para agregar un escucha de eventos de clic a cada uno de los optionButtons
 // TODO 6B: Dentro de la función del controlador de eventos, mostrar la explicación del hecho estableciendo el texto del elemento de explicación
 // TODO 7: Dentro de la función del controlador de eventos,
@@ -88,6 +89,7 @@ function handleButtonClick() {
                 button.classList.add('correct');
             } else {
                 button.classList.add('incorrect');
+                score--
             }
            
             const delay = 1000;
@@ -98,9 +100,10 @@ function handleButtonClick() {
                     explanationElement.textContent = '';
                     if(questions>=5){
                         for (let buttons of optionButtons) {
-                                disable(buttons);
+                            buttons.classList.remove("correct", "incorrect");
+                            disable(buttons);
                             }
-                    return statementElement.textContent  = 'Espero que hayas disfrutado';
+                    return statementElement.textContent  = `Terminaste. Tu puntuación es de ${score * 2} sobre 10`;
                     }   
                     statementElement.textContent = fact[questions].statement;
 
