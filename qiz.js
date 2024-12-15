@@ -7,7 +7,7 @@ const optionButtons = document.querySelectorAll('#options button');
 const explanationElement = document.querySelector('#explanation');
 const scoreElement = document.querySelector('.score')
 
-const inputElement = document.querySelector('.username');
+const inputElement = document.querySelector('.inputUserName');
 const startButton = document.querySelector('.startQuiz');
 const usernameElement = document.querySelector('.user');
 

@@ -1,3 +1,7 @@
+:root{
+  box-sizing: border-box;
+}
+
 body {
         
         margin: 1rem auto;
@@ -53,12 +57,14 @@ body {
         background-color: hsla(357, 90%, 55%, 0.6);
       }
 
-      .username{
+      .inputUsername{
         padding: 0.3rem;
         font-size: 1.5rem;
         font-weight: bold;
         border-radius: 5px;
         border: none;
+        width: 28rem;
+        box-shadow: 5px 5px 5px gray;
       }
       .startQuiz{
         margin-left: 0.5rem;
@@ -69,5 +75,14 @@ body {
         border-radius: 5px;
         border: none;
         cursor: pointer;
+        box-shadow: 5px 5px 5px gray;
+      }
+      .divInput{
+        margin-top: 1rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
       }
    
